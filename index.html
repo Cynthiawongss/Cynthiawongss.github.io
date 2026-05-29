@@ -14,6 +14,7 @@
             margin: 0; 
             padding: 0; 
             height: 100%; 
+            /* 纯色背景 */
             background-color: #F7EFFF; 
             font-family: sans-serif;
         }
@@ -27,48 +28,17 @@
             height: 100vh;
             overflow: hidden;
             gap: 2.5rem;
+            /* 淡入动画，解决加载闪烁问题 */
+            opacity: 0; 
+            animation: fadeIn 0.8s ease-in forwards; 
+            animation-delay: 0.1s; 
         }
 
-        .bg-base {
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            z-index: -2;
-            background: #F7EFFF;
+        @keyframes fadeIn {
+            to { opacity: 1; }
         }
 
-        .liquid-orb-vibrant-1 {
-            position: absolute;
-            top: 40%;
-            left: 30%;
-            width: 280px;
-            height: 280px;
-            background: linear-gradient(135deg, #00E5FF 0%, #7C4DFF 100%);
-            border-radius: 50%;
-            filter: blur(50px);
-            opacity: 0.55;
-            z-index: -1;
-            animation: floating-blob 12s ease-in-out infinite alternate;
-        }
-
-        .liquid-orb-vibrant-2 {
-            position: absolute;
-            top: 45%;
-            left: 48%;
-            width: 220px;
-            height: 220px;
-            background: linear-gradient(135deg, #FF007F 0%, #B630C1 100%);
-            border-radius: 50%;
-            filter: blur(40px);
-            opacity: 0.45;
-            z-index: -1;
-            animation: floating-blob 9s ease-in-out infinite alternate-reverse;
-        }
-
-        @keyframes floating-blob {
-            0% { transform: translate(0, 0) scale(1) rotate(0deg); }
-            100% { transform: translate(40px, -30px) scale(1.2) rotate(90deg); }
-        }
-
+        /* 标题完全保留 */
         h1 {
             font-family: 'Carattere', cursive; 
             color: #B630C1; 
@@ -79,8 +49,10 @@
             text-align: center;
             z-index: 1;
             text-shadow: 0 4px 15px rgba(182, 48, 193, 0.15);
+            padding: 0 15px;
         }
 
+        /* 你的 Liquid Glass 样式，100% 原封不动 */
         .liquid-glass-capsule {
             position: relative;
             display: flex;
@@ -169,6 +141,7 @@
             color: #000000;
             text-align: left; 
             z-index: 3;
+            min-width: 0; /* 防止手机端输入框撑破 */
         }
 
         input::placeholder {
@@ -177,42 +150,35 @@
             opacity: 1;
         }
 
-        /* --------------------------------------------------
-           💎 终极精修版纯紫色完美居中按钮
-           -------------------------------------------------- */
+        /* 按钮与箭头，100% 原封不动 */
         .submit-btn {
             position: relative;
             width: 44px;
             height: 44px;
             border-radius: 50%;
-            /* 简化为纯紫色，匹配标题风格 */
             background-color: #B630C1; 
             border: 1px solid rgba(255, 255, 255, 0.55);
             cursor: pointer;
             transition: all 0.3s ease;
             z-index: 3;
+            flex-shrink: 0; /* 防止手机端被挤压 */
             box-shadow:
                 0 5px 14px rgba(106, 27, 154, 0.42),
                 inset 0 2px 7px rgba(255, 255, 255, 0.62),
                 inset 0 -5px 9px rgba(58, 0, 102, 0.2);
-            overflow: visible; /* 确保transform时不被切割 */
+            overflow: visible;
         }
 
-        /* 使用绝对定位强制像素级完美居中，不再依赖 Flexbox 居中 */
         .submit-btn::after {
-            /* 🔥 核心魔法：使用 Heavy Rightwards Arrow (➔)，它天生粗壮且对称 */
             content: "\2794"; 
             color: white;
-            font-size: 1.5rem; /* 这个符号天生显小，放大一点字号 */
+            font-size: 1.5rem; 
             font-weight: 900; 
-
-            /* 🔥 核心魔法：像素级强制绝对定位居中 */
             position: absolute;
-            top: 50%; /* 垂直偏移 50% */
-            left: 50%; /* 水平偏移 50% */
-            transform: translate(-50%, -50%); /* 自身再对向偏移，实现完美居中 */
-            
-            line-height: 1; /* 确保浏览器不应用任何基线偏移 */
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            line-height: 1; 
             display: block;
         }
 
@@ -223,16 +189,22 @@
                 inset 0 2px 8px rgba(255, 255, 255, 0.72),
                 inset 0 -5px 10px rgba(223, 187, 252, 0.24);
         }
+
+        /* 手机端排版自适应完全保留 */
+        @media (max-width: 768px) {
+            #app-container { gap: 1.5rem; }
+            h1 { font-size: 4.5rem; }
+            .liquid-glass-capsule { padding: 6px 10px 6px 15px; }
+            input { font-size: 1.8rem; padding: 8px 5px; }
+            input::placeholder { font-size: 1.8rem; }
+            .submit-btn { width: 38px; height: 38px; }
+            .submit-btn::after { font-size: 1.3rem; }
+        }
     </style>
 </head>
 <body>
 
     <div id="app-container">
-        
-        <div class="bg-base"></div>
-        <div class="liquid-orb-vibrant-1"></div>
-        <div class="liquid-orb-vibrant-2"></div>
-
         <h1>Hiiiiiii Step Into Cynthia&rsquo;s World</h1>
 
         <div
