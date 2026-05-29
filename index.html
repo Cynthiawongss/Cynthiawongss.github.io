@@ -3,39 +3,259 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cynthia Wong | Official Website</title>
+    <title>Cynthia's World - Final Ultra Liquid Glass</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Carattere&display=swap" rel="stylesheet">
+    
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #111;
-            color: #f5f5f7;
+        body, html { 
+            margin: 0; 
+            padding: 0; 
+            height: 100%; 
+            background-color: #F7EFFF; 
+            font-family: sans-serif;
+        }
+
+        #app-container {
+            position: relative;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;
+            overflow: hidden;
+            gap: 2.5rem;
         }
-        .container {
-            text-align: center;
-            padding: 20px;
+
+        .bg-base {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: -2;
+            background: #F7EFFF;
         }
+
+        .liquid-orb-vibrant-1 {
+            position: absolute;
+            top: 40%;
+            left: 30%;
+            width: 280px;
+            height: 280px;
+            background: linear-gradient(135deg, #00E5FF 0%, #7C4DFF 100%);
+            border-radius: 50%;
+            filter: blur(50px);
+            opacity: 0.55;
+            z-index: -1;
+            animation: floating-blob 12s ease-in-out infinite alternate;
+        }
+
+        .liquid-orb-vibrant-2 {
+            position: absolute;
+            top: 45%;
+            left: 48%;
+            width: 220px;
+            height: 220px;
+            background: linear-gradient(135deg, #FF007F 0%, #B630C1 100%);
+            border-radius: 50%;
+            filter: blur(40px);
+            opacity: 0.45;
+            z-index: -1;
+            animation: floating-blob 9s ease-in-out infinite alternate-reverse;
+        }
+
+        @keyframes floating-blob {
+            0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+            100% { transform: translate(40px, -30px) scale(1.2) rotate(90deg); }
+        }
+
         h1 {
-            font-size: 2.5rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-            letter-spacing: -0.02em;
+            font-family: 'Carattere', cursive; 
+            color: #B630C1; 
+            font-size: 7rem; 
+            font-weight: 400; 
+            margin: 0;
+            line-height: 1.1;
+            text-align: center;
+            z-index: 1;
+            text-shadow: 0 4px 15px rgba(182, 48, 193, 0.15);
         }
-        p {
-            font-size: 1.1rem;
-            color: #86868b;
-            font-weight: 400;
+
+        .liquid-glass-capsule {
+            position: relative;
+            display: flex;
+            align-items: center;
+            width: 440px; 
+            max-width: 90%;
+            padding: 8px 14px 8px 20px; 
+            box-sizing: border-box;
+            border-radius: 50px;
+            z-index: 2;
+            isolation: isolate;
+
+            background:
+                linear-gradient(135deg, rgba(230, 209, 249, 0.58) 0%, rgba(213, 161, 246, 0.28) 48%, rgba(255, 255, 255, 0.12) 100%),
+                linear-gradient(90deg, rgba(175, 232, 239, 0.18), rgba(255, 226, 241, 0.14));
+            backdrop-filter: blur(22px) saturate(1.85) brightness(0.9);
+            -webkit-backdrop-filter: blur(22px) saturate(1.85) brightness(0.9);
+
+            border: 1px solid rgba(255, 255, 255, 0.72);
+            box-shadow: 
+                0 20px 42px rgba(211, 185, 227, 0.28),
+                2px 0 10px rgb(255, 255, 255),
+                -2px 0 10px rgba(245, 212, 243, 0.253),
+                inset 0 4px 12px rgba(255, 255, 255, 0.82),
+                inset 0 -9px 18px rgba(209, 192, 222, 0.25);
+
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .liquid-glass-capsule::before {
+            content: "";
+            position: absolute;
+            inset: 1px;
+            border-radius: inherit;
+            pointer-events: none;
+            z-index: 1;
+            background:
+                linear-gradient(180deg, rgba(231, 202, 240, 0.45), transparent 38%),
+                radial-gradient(ellipse at 18% 50%, rgba(255, 255, 255, 0.683), transparent 42%),
+                radial-gradient(ellipse at 84% 50%, #fee5f238, transparent 44%);
+            box-shadow:
+                inset 0 1px 2px rgba(255, 255, 255, 0.95),
+                inset 0 -1px 8px rgba(200, 138, 235, 0.18);
+            mix-blend-mode: screen;
+        }
+
+        .liquid-glass-capsule::after {
+            content: "";
+            position: absolute;
+            left: 28px;
+            right: 62px;
+            top: 9px;
+            height: 16px;
+            border-radius: 999px;
+            pointer-events: none;
+            z-index: 1;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.78), rgba(234, 192, 237, 0.08));
+            filter: blur(4px);
+            opacity: 0.72;
+        }
+
+        .liquid-glass-capsule > canvas {
+            border-radius: inherit;
+            pointer-events: none;
+        }
+
+        .liquid-glass-capsule:focus-within {
+            transform: scale(1.02);
+            box-shadow: 
+                0 28px 50px rgba(228, 206, 241, 0.34),
+                3px 0 14px rgba(0, 229, 255, 0.44),
+                -3px 0 14px rgba(255, 0, 128, 0.42),
+                inset 0 5px 15px rgba(255, 255, 255, 0.9),
+                inset 0 -10px 20px rgba(255, 255, 255, 0.3);
+        }
+
+        input {
+            position: relative;
+            flex-grow: 1;
+            padding: 12px 10px;
+            font-family: 'Carattere', cursive;
+            font-size: 2.3rem; 
+            border: none;
+            background: transparent; 
+            outline: none;
+            color: #000000;
+            text-align: left; 
+            z-index: 3;
+        }
+
+        input::placeholder {
+            color: rgba(0, 0, 0, 0.6); 
+            font-size: 2.3rem; 
+            opacity: 1;
+        }
+
+        /* --------------------------------------------------
+           💎 终极精修版纯紫色完美居中按钮
+           -------------------------------------------------- */
+        .submit-btn {
+            position: relative;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            /* 简化为纯紫色，匹配标题风格 */
+            background-color: #B630C1; 
+            border: 1px solid rgba(255, 255, 255, 0.55);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 3;
+            box-shadow:
+                0 5px 14px rgba(106, 27, 154, 0.42),
+                inset 0 2px 7px rgba(255, 255, 255, 0.62),
+                inset 0 -5px 9px rgba(58, 0, 102, 0.2);
+            overflow: visible; /* 确保transform时不被切割 */
+        }
+
+        /* 使用绝对定位强制像素级完美居中，不再依赖 Flexbox 居中 */
+        .submit-btn::after {
+            /* 🔥 核心魔法：使用 Heavy Rightwards Arrow (➔)，它天生粗壮且对称 */
+            content: "\2794"; 
+            color: white;
+            font-size: 1.5rem; /* 这个符号天生显小，放大一点字号 */
+            font-weight: 900; 
+
+            /* 🔥 核心魔法：像素级强制绝对定位居中 */
+            position: absolute;
+            top: 50%; /* 垂直偏移 50% */
+            left: 50%; /* 水平偏移 50% */
+            transform: translate(-50%, -50%); /* 自身再对向偏移，实现完美居中 */
+            
+            line-height: 1; /* 确保浏览器不应用任何基线偏移 */
+            display: block;
+        }
+
+        .submit-btn:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow:
+                0 7px 18px rgba(213, 0, 249, 0.5),
+                inset 0 2px 8px rgba(255, 255, 255, 0.72),
+                inset 0 -5px 10px rgba(223, 187, 252, 0.24);
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Hello, World. I'm Cynthia.</h1>
-        <p>My digital space is currently under construction. Stay tuned.</p>
+
+    <div id="app-container">
+        
+        <div class="bg-base"></div>
+        <div class="liquid-orb-vibrant-1"></div>
+        <div class="liquid-orb-vibrant-2"></div>
+
+        <h1>Hiiiiiii Step Into Cynthia&rsquo;s World</h1>
+
+        <div
+            class="liquid-glass-capsule"
+            data-config='{"blurAmount":0.02,"refraction":0.7,"chromAberration":0.09,"edgeHighlight":0.28,"specular":0.16,"fresnel":1,"distortion":0.025,"cornerRadius":50,"zRadius":40,"opacity":0.98,"saturation":0.42,"tintStrength":0.12,"brightness":-0.08,"shadowOpacity":0.5,"shadowSpread":10,"shadowOffsetY":8,"bevelMode":0}'
+        >
+            <input type="password" placeholder="Please enter the password..." aria-label="Password">
+            <button class="submit-btn" type="button" aria-label="Submit password"></button>
+        </div>
+
     </div>
+
+    <script type="module">
+        import { LiquidGlass } from 'https://cdn.jsdelivr.net/npm/@ybouane/liquidglass/dist/index.js';
+
+        try {
+            await LiquidGlass.init({
+                root: document.querySelector('#app-container'),
+                glassElements: document.querySelectorAll('.liquid-glass-capsule')
+            });
+        } catch (error) {
+            console.warn('LiquidGlass shader failed to load; using CSS fallback.', error);
+        }
+    </script>
 </body>
 </html>
