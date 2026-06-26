@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cynthia Wong — Portfolio</title>
+  <meta name="description" content="Cynthia Wong — Data Science & AI Engineer">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Carattere&family=Castoro+Titling&family=Inter:wght@300;400;500;600;700;800;900&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Grotesk:wght@300;400;500;600;700&family=Charmonman:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css?v=16">
+</head>
+<body>
+
+  <!-- ============================================================
+       SPLASH SCREEN — Neural Noise (3s) → fade → main page
+       ============================================================ -->
+  <div class="splash-overlay" id="splashOverlay">
+    <canvas class="splash-canvas" id="splashCanvas"></canvas>
+    <!-- Mirror hero layout chain: container-large → hero-video_content-wrapper → hero-name_wrapper -->
+    <div class="splash-content">
+      <div class="splash-label">
+        <span class="splash-label-text" id="splashLabelText">CYNTHIA WONG</span>
+        <!-- Invisible spacers matching tagline + button height so the name sits at the exact same Y as the hero -->
+        <span class="splash-spacer" aria-hidden="true"></span>
+        <span class="splash-spacer" aria-hidden="true"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       NAVIGATION — Liquid Glass Pill
+       ============================================================ -->
+  <nav class="navbar_wrapper" id="navbar">
+    <div class="nav-outer" id="navOuter">
+      <div class="nav-inner">
+        <div class="nav-buttons" id="navButtons">
+          <a href="#education" class="nav-item active" data-target="education">
+            <div class="liquid-spot"></div>
+            <span>Education</span>
+          </a>
+          <a href="#background" class="nav-item" data-target="background">
+            <div class="liquid-spot"></div>
+            <span>Background</span>
+          </a>
+          <a href="#work" class="nav-item" data-target="work">
+            <div class="liquid-spot"></div>
+            <span>Work</span>
+          </a>
+          <a href="#projects" class="nav-item" data-target="projects">
+            <div class="liquid-spot"></div>
+            <span>Projects</span>
+          </a>
+          <a href="#campus" class="nav-item" data-target="campus">
+            <div class="liquid-spot"></div>
+            <span>Campus</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       HERO SECTION — Original Design
+       ============================================================ -->
+  <section class="hero" id="hero">
+    <div class="hero-video_content">
+      <div class="container-large">
+        <div class="hero-video_content-wrapper">
+          <!-- Name: CYNTHIA WONG — right aligned, Charmonman font -->
+          <div class="hero-name_wrapper">
+            <h1 class="hero-name">CYNTHIA WONG</h1>
+            <div class="hero-tagline">
+              <p class="text-size-regular">I'm Cynthia Wong, a Data Science and Big Data Technology student in a Sino-American joint degree program.</p>
+            </div>
+            <div class="margin-top margin-xsmall">
+              <div class="button-group">
+                <a href="#education" class="button is-liquid-glass">Learn more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Hero background image -->
+    <div class="hero-video_background-image-wrapper">
+      <div class="hero-video_background-image" style="background-image: url('./assets/images/hero-pg.png');"></div>
+    </div>
+    <!-- Scroll Indicator -->
+    <div class="hero-scroll-indicator">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 1: EDUCATION
+       ============================================================ -->
+  <section class="section education-section" id="education">
+    <div class="container">
+      <div class="education-grid">
+        <!-- Left: Info -->
+        <div class="reveal">
+          <span class="section-label">01 — Education</span>
+          <h2 class="education-section-title">My Background</h2>
+
+          <!-- School Row 1: NSU -->
+          <div class="education-school-row">
+            <div class="school-icons-stack">
+              <img src="assets/images/nsu1.png" alt="NSU" class="school-icon" />
+              <img src="assets/images/nsu2.png" alt="NSU" class="school-icon" />
+            </div>
+            <div>
+              <h3 class="education-school-item">Northeastern State University (USA)</h3>
+            </div>
+          </div>
+          <!-- School Row 2: GCTB -->
+          <div class="education-school-row">
+            <div class="school-icons-stack">
+              <img src="assets/images/gctb%20(1).png" alt="GCTB" class="school-icon" />
+              <img src="assets/images/gctb%20(2).png" alt="GCTB" class="school-icon" />
+            </div>
+            <div>
+              <h3 class="education-school-item"><span style="white-space:nowrap;">Guangzhou College of Technology and Business</span><br>(CN · GCTB-NSU)</h3>
+            </div>
+          </div>
+          <p class="education-major" style="margin-top:1.75rem;">
+            Data Science And Big Data Technology | 数据科学与大数据技术 (中外合作办学)<br>Sino-American Joint Degree Program | 2022.09–2026.07（中国教育部、中留服认证）<br>
+            Bachelor of Engineer (CN) | Bachelor of Technology (U.S)
+          </p>
+
+          <div class="education-details">
+            <div class="education-stat">
+              <span class="education-stat-value">3.60</span>
+              <span class="education-stat-label">GPA / 86</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Main Courses — full width -->
+      <p class="education-courses reveal" style="max-width:100%;width:100%;">
+        <strong>Main Courses（Includes certificate of instruction in English）:</strong><br>
+        Data mining(96)、Business statistics(96)、Object Based Visual Program(95)、Machine Learning Application(95)、BigData RealTime Analysis、Database management systems、Data telecommunication，Intro to information security，Html5&amp;CSS、C/C++ programs、concepts of industry，Linear Algebra、Probability and Statistics...etc.
+      </p>
+
+      <!-- AI & LLM Tech Stack Card -->
+      <div class="skill-bento skill-bento-hero reveal" style="margin-top: 2rem;">
+        <div class="skill-bento-hero-inner">
+          <div class="skill-bento-icon">👾</div>
+          <div>
+            <div class="skill-bento-title">Tech Stack</div>
+            <div class="skill-bento-desc">AI platforms, programming languages &amp; analytics tools</div>
+          </div>
+        </div>
+        <div class="tech-tags">
+          <span class="tech-tag accent">Claude Desktop + CLI</span>
+          <span class="tech-tag accent">Codex</span>
+          <span class="tech-tag accent">Google AI Studio</span>
+          <span class="tech-tag accent">Perplexity</span>
+          <span class="tech-tag accent">Dify Platform</span>
+          <span class="tech-tag accent">Python</span>
+          <span class="tech-tag accent">HTML & CSS</span>
+          <span class="tech-tag accent">BI</span>
+          <span class="tech-tag">MATLAB</span>
+          <span class="tech-tag">C/C++</span>
+          <span class="tech-tag">Wireshark</span>
+          <span class="tech-tag">WEKA</span>
+          <span class="tech-tag">R</span>
+        </div>
+      </div>
+
+      <div class="education-contact reveal" style="margin-top: 2rem;">
+            <a href="mailto:cynthiawongwingsaan@gmail.com" class="contact-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              cynthiawongwingsaan@gmail.com
+            </a>
+            <a href="tel:+8618102608487" class="contact-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              +86 18102608487
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 2: MY BACKGROUND
+       ============================================================ -->
+  <section class="section background-section" id="background">
+    <div class="container">
+      <div class="background-header reveal">
+        <span class="section-label">02 — The Toolkit</span>
+        <h2>Business &amp; Creative Stack</h2>
+        <p>AI-powered, design-aware, data-driven — the tools and craft I bring to every project.</p>
+      </div>
+
+      <!-- Bento Skills Grid -->
+      <div class="skills-grid">
+
+        <!-- Row of 4 smaller bentos -->
+        <div class="skills-grid-row">
+          <div class="skill-bento reveal">
+            <div class="skill-bento-label">🎨 Design</div>
+            <div class="skill-bento-title">Creative Tools</div>
+            <div class="skill-bento-desc">Full-stack design workflow from wireframe to production</div>
+            <div class="tech-tags">
+              <span class="tech-tag accent">Figma</span>
+              <span class="tech-tag accent">Canva</span>
+              <span class="tech-tag accent">OpenDesign</span>
+            </div>
+          </div>
+
+          <div class="skill-bento reveal">
+            <div class="skill-bento-label">📊 BI &amp; Data</div>
+            <div class="skill-bento-title">Business Analytics</div>
+            <div class="skill-bento-desc">Business intelligence &amp; data storytelling with modern BI tools</div>
+            <div class="tech-tags">
+              <span class="tech-tag accent">Looker Studio</span>
+              <span class="tech-tag accent">Semrush</span>
+              <span class="tech-tag accent">Google Trends</span>
+            </div>
+          </div>
+
+          <div class="skill-bento reveal">
+            <div class="skill-bento-label">🎬 Video</div>
+            <div class="skill-bento-title">Content Creation</div>
+            <div class="skill-bento-desc">Video editing &amp; multimedia production for social &amp; academic</div>
+            <div class="tech-tags">
+              <span class="tech-tag accent">Capcut</span>
+              <span class="tech-tag accent">剪映</span>
+            </div>
+          </div>
+
+          <div class="skill-bento reveal">
+            <div class="skill-bento-label">🔍 SEO</div>
+            <div class="skill-bento-title">Growth Marketing</div>
+            <div class="skill-bento-desc">Programmatic SEO pipeline, keyword strategy &amp; technical audit</div>
+            <div class="tech-tags">
+              <span class="tech-tag accent">WordPress</span>
+              <span class="tech-tag accent">Kadence</span>
+              <span class="tech-tag accent">Excel</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Languages Section -->
+      <div style="margin-top:3rem;" class="reveal">
+        <span class="section-label">Languages</span>
+        <div class="lang-cards" style="margin-top:1rem;">
+          <div class="lang-card">
+            <div class="lang-name">Cantonese</div>
+            <div class="lang-level">Native</div>
+          </div>
+          <div class="lang-card">
+            <div class="lang-name">Mandarin</div>
+            <div class="lang-level">二甲 (Professional)</div>
+          </div>
+          <div class="lang-card">
+            <div class="lang-name">English</div>
+            <div class="lang-level">CET4 · Daily Communication</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 3: WORK EXPERIENCE (Dark)
+       ============================================================ -->
+  <section class="section work-section" id="work">
+    <div class="container">
+      <div class="work-header reveal">
+        <span class="section-label">03 — Internship</span>
+        <h2>Work Experience</h2>
+        <p>Specialist — scaled content platforms with AI-driven programmatic SEO &amp; multilingual growth strategies.</p>
+      </div>
+
+      <!-- GeeLark Internship -->
+      <div class="work-card work-card-geelark reveal" style="margin-bottom:2rem;">
+        <div class="work-card-header">
+          <div>
+            <div class="work-company">GeeLark — Google Programmatic SEO Intern</div>
+            <div class="work-meta">
+              <span>📍 广州磁湖信息技术有限公司</span>
+              <span>📅 2025.06.30 – 2026.05.30</span>
+            </div>
+          </div>
+          <span class="work-live-badge">
+            <span class="pulse-dot"></span> 1200+ Pages Live
+          </span>
+          <button class="btn btn-outline-light" onclick="togglePerformancePanel()" style="font-size:0.75rem;margin-top:0.5rem;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><polyline points="3 9 21 9"/></svg>
+            View Performance Report
+          </button>
+        </div>
+
+        <!-- KPIs -->
+        <div class="work-kpis">
+          <div class="kpi-card">
+            <div class="kpi-value">3.44M+</div>
+            <div class="kpi-label">Search Impressions</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-value">44.5K+</div>
+            <div class="kpi-label">Organic Clicks</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-value">19</div>
+            <div class="kpi-label">Avg. Ranking Position</div>
+          </div>
+        </div>
+
+        <!-- Achievements -->
+        <div class="work-achievements">
+          <ul class="work-achievement-list">
+            <li>Built <a href="#cardPseo" class="inline-project-link"><strong>RAG-based programmatic content generation &amp; publishing Pipeline</strong><span class="link-arrow">↗</span></a> (Python / 0-1 portfolio piece) — <strong>1 page indexed by OpenAI crawler.</strong> Workflow synced to <strong>Dify platform</strong>.</li>
+            <li><strong>Iterative Optimization &amp; Scalable Execution of Two GEO Pipelines:</strong> Took over and managed two Python-based programmatic SEO pipelines for the team, specifically focusing on automated Glossary Generation and Multilingual Blog Translation.
+              <div class="tech-tags" style="margin-top:0.5rem;">
+                <span class="tech-tag">YOLOv3</span>
+                <span class="tech-tag">SQLite</span>
+                <span class="tech-tag">NLTK</span>
+                <span class="tech-tag">langdetect</span>
+                <span class="tech-tag">Janome</span>
+                <span class="tech-tag">fuzzywuzzy</span>
+                <span class="tech-tag">mistune</span>
+                <span class="tech-tag">ThreadPoolExecutor</span>
+                <span class="tech-tag">LLM Quality Control Loop</span>
+              </div>
+            </li>
+            <li><strong>Keyword Research &amp; Intent Analysis:</strong> Proficient in leveraging industry-standard platforms like Semrush and Google Trends for keyword discovery and competitive analysis. Integrated AI tools to parse search intent and systematically expand long-tail keywords.</li>
+            <li><strong>Technical SEO Auditing:</strong> Conducted comprehensive site-wide audits to identify and backtrack 404/403 internal links for URL remediation. Audited external link status codes (404/403/502) and successfully troubleshot various indexing anomalies.</li>
+          </ul>
+        </div>
+
+        <!-- Performance Report Image Panel -->
+        <div class="dify-embed-panel open" id="performancePanel" style="margin-top:1.5rem;">
+          <div class="code-preview-header">
+            <span style="font-family:var(--font-mono);font-size:0.82rem;font-weight:600;color:rgba(26,26,46,0.6);">Performance Report (Click to enlarge)</span>
+            <div style="display:flex;gap:0.5rem;">
+              <button class="code-preview-close" onclick="togglePerformancePanel()" style="color:rgba(26,26,46,0.45);">✕</button>
+            </div>
+          </div>
+          <div class="dify-embed-body" id="performanceBody">
+            <img
+              src="assets/images/performance-report/Performance%20Report.png"
+              alt="Performance Report"
+              class="dify-preview-img"
+              onclick="openImageLightbox(this.src)"
+              style="width:100%;height:auto;display:block;">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 4: MY PROJECTS (Card Stack)
+       ============================================================ -->
+  <section class="section projects-section" id="projects">
+    <div class="container">
+      <div class="projects-header reveal">
+        <span class="section-label">04 — My Projects</span>
+        <h2>Featured Work</h2>
+        <p>Four projects spanning AI, data engineering, and innovation.</p>
+      </div>
+
+      <!-- Card Stack -->
+      <div class="card-stack">
+        <!-- Card 1: PSEO Intern (longest) -->
+        <div class="project-card card-pseo reveal" id="cardPseo">
+          <div class="project-card-date">2025.06 – 2026.05 · GeeLark · SaaS</div>
+          <h4 class="project-card-title">Programmatic SEO Pipeline (0-to-1 Portfolio)</h4>
+          <div class="project-card-body">
+            <div class="project-card-desc">
+              <p style="margin-bottom:1rem;font-weight:500;">End-to-end AI content generation pipeline — from web scraping to WordPress publishing.</p>
+              <ul>
+                <li>Used <strong>Playwright + playwright_stealth</strong> for anti-detection browser automation and batch asynchronous web scraping; paired with <strong>BeautifulSoup</strong> for HTML cleaning and core text extraction.</li>
+                <li>Implemented language detection, automatic translation, and <strong>ASCII ratio</strong> checks to trigger <strong>en_model translation</strong>; integrated <strong>Google Search API</strong> for <strong>keyword SERP</strong> data collection.</li>
+                <li><strong>9-Step Workflow &amp; LLM Orchestration: Raw data scraping (80%) → Auxiliary page search (20%) → Intelligent FAQ filtering → Product info fusion &amp; optimization (Product Info Base) → AI data cleaning &amp; structure generation (Prompt Engineering via LLMs like Gemini-flash/GPT-4o) → B2B business copy polishing → English synonym replacement → Output format standardization → Excel variable table export.</strong></li>
+                <li>Built 8 image templates using <strong>Pillow</strong>; achieved input-to-mockup programmatic output via Playwright auto-screenshot, smart cropping, and layer blending.</li>
+                <li>Constructed smart variable replacement flow based on <strong>openpyxl + regex (re)</strong> to replace placeholders with batch-generated content; output <strong>WordPress Kadence Blocks HTML</strong> for bulk publishing.</li>
+              </ul>
+              <div class="project-card-cta">
+                <button class="btn btn-outline-light" onclick="toggleDifyPreview()" style="font-size:0.75rem;">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><polyline points="3 9 21 9"/></svg>
+                  View Dashboard
+                </button>
+              </div>
+            </div>
+            <div>
+              <div class="kpi-card" style="text-align:center;">
+                <div class="kpi-value" style="background:none;-webkit-text-fill-color:initial;">🕷️</div>
+                <div class="kpi-label" style="font-size:var(--text-large);background:linear-gradient(135deg, var(--color-accent-purple), var(--color-accent-rose));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:700;">1 Page indexed by OpenAI crawler</div>
+              </div>
+              <div class="project-card-highlights">
+                <span class="project-tech-tag">Python</span>
+                <span class="project-tech-tag">asyncio</span>
+                <span class="project-tech-tag">LLM Orchestration</span>
+                <span class="project-tech-tag">Retrieval-Augmented Generation</span>
+                <span class="project-tech-tag">multi-model routing</span>
+                <span class="project-tech-tag">model registry</span>
+                <span class="project-tech-tag">prompt engineering</span>
+                <span class="project-tech-tag">JSON</span>
+                <span class="project-tech-tag">anti-hallucination guardrails</span>
+                <span class="project-tech-tag">text spinning</span>
+                <span class="project-tech-tag">content deduplication</span>
+                <span class="project-tech-tag">Playwright (async+sync)</span>
+                <span class="project-tech-tag">playwright-stealth</span>
+                <span class="project-tech-tag">BeautifulSoup4</span>
+                <span class="project-tech-tag">Chromium headless</span>
+                <span class="project-tech-tag">web scraping pipeline</span>
+                <span class="project-tech-tag">GoogleSearch API</span>
+                <span class="project-tech-tag">Pillow (PIL)</span>
+                <span class="project-tech-tag">LANCZOS resampling</span>
+                <span class="project-tech-tag">RGBA compositing</span>
+                <span class="project-tech-tag">batch image processing pipeline</span>
+                <span class="project-tech-tag">openpyxl</span>
+                <span class="project-tech-tag">Markdown</span>
+                <span class="project-tech-tag">HTML</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dify Dashboard Embed -->
+          <div class="dify-embed-panel open" id="difyEmbedPanel">
+            <div class="code-preview-header">
+              <span style="font-family:var(--font-mono);font-size:0.82rem;font-weight:600;color:rgba(26,26,46,0.6);">Dify Dashboard — Live Pipeline Preview (Click to enlarge)</span>
+              <div style="display:flex;gap:0.5rem;">
+                <button class="code-preview-close" onclick="toggleDifyPreview()">✕</button>
+              </div>
+            </div>
+            <div class="dify-embed-body" id="difyEmbedBody">
+              <img
+                src="assets/images/dify.png"
+                alt="Dify Dashboard Preview"
+                class="dify-preview-img"
+                onclick="openImageLightbox(this.src)"
+                style="width:100%;height:auto;display:block;">
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Facial Expression Recognition -->
+        <div class="project-card card-face reveal" id="cardFace">
+          <div class="project-card-date">2026.02 – 2026.04 · Academic · Graduation Project &amp; Thesis</div>
+          <h4 class="project-card-title">Facial Expression & Emotion Analysis Model: Design & Implementation (PyTorch + CNN)</h4>
+          <div class="project-card-body">
+            <div class="project-card-desc">
+              <ul>
+                <li><strong>Designed Lightweight CNN:</strong> Built a <strong>4-layer cascaded convolutional network (64→512 channels)</strong>; applied <strong>AdaptiveAvgPool2d + dual Dropout (0.4/0.3)</strong>, reducing classifier dimensions from 4.6K to 512 to enhance cross-subject generalization capability.</li>
+                <li><strong>Resolved Classification Collapse:</strong> Conducted gradient flow analysis and switched to <strong>CrossEntropyLoss combined with ReduceLROnPlateau</strong> dynamic scheduling; achieved a Weighted F1 score of 0.6935.</li>
+                <li><strong>Built Composite Data Augmentation Pipeline:</strong> Utilized <strong>RandomAffine + RandomHorizontalFlip + RandomErasing</strong> to enable the model to learn distributed texture representations across muscle regions.</li>
+                <li><strong>Automated Experimental Reporting Loop:</strong> Leveraged <strong>openpyxl + matplotlib</strong> to dynamically export multi-sheet training data, curves, and architecture diagrams, achieving end-to-end automation from training to reporting (train → report).</li>
+              </ul>
+              <div class="project-card-cta">
+                <button class="btn btn-outline-light" onclick="toggleCodePreview('face')" style="font-size:0.75rem;">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                  View Source Code
+                </button>
+              </div>
+            </div>
+            <div>
+              <div class="score-badge">
+                <span class="score">F1 Score</span> 0.6935
+              </div>
+              <div class="project-card-highlights">
+                <span class="project-tech-tag">Python</span>
+                <span class="project-tech-tag">ReLU</span>
+                <span class="project-tech-tag">PyTorch</span>
+                <span class="project-tech-tag">Conv2d</span>
+                <span class="project-tech-tag">Convolutional Neural Network(CNN)</span>
+                <span class="project-tech-tag">BatchNorm2d</span>
+                <span class="project-tech-tag">MaxPool2d</span>
+                <span class="project-tech-tag">Softmax</span>
+                <span class="project-tech-tag">AdaptiveAvgPool2d</span>
+                <span class="project-tech-tag">Dropout</span>
+                <span class="project-tech-tag">CrossEntropyLoss</span>
+                <span class="project-tech-tag">Adam Optimizer</span>
+                <span class="project-tech-tag">ReduceLROnPlateau</span>
+                <span class="project-tech-tag">Learning Rate Scheduler</span>
+                <span class="project-tech-tag">Data Augmentation</span>
+                <span class="project-tech-tag">RandomAffine</span>
+                <span class="project-tech-tag">RandomHorizontalFlip</span>
+                <span class="project-tech-tag">RandomErasing</span>
+                <span class="project-tech-tag">Grayscale</span>
+                <span class="project-tech-tag">Normalization</span>
+                <span class="project-tech-tag">RMSE</span>
+                <span class="project-tech-tag">Stratified Sampling</span>
+                <span class="project-tech-tag">torchvision</span>
+                <span class="project-tech-tag">PIL/Pillow</span>
+                <span class="project-tech-tag">NumPy</span>
+                <span class="project-tech-tag">pandas</span>
+                <span class="project-tech-tag">scikit-learn</span>
+                <span class="project-tech-tag">Precision</span>
+                <span class="project-tech-tag">Confusion Matrix</span>
+                <span class="project-tech-tag">matplotlib</span>
+                <span class="project-tech-tag">openpyxl</span>
+              </div>
+            </div>
+          </div>
+          <!-- Code preview panel -->
+          <div class="code-preview-panel open" id="codePreviewFace">
+            <div class="code-preview-header">
+              <div class="code-preview-tabs">
+                <span class="code-preview-tab active" onclick="switchCodeTab('face', 'model', this)">model.py</span>
+                <span class="code-preview-tab" onclick="switchCodeTab('face', 'train', this)">train.py</span>
+              </div>
+              <button class="code-preview-close" onclick="toggleCodePreview('face')">✕</button>
+            </div>
+            <div class="code-preview-content" id="codeContentFace">
+              <!-- Code content loaded via JS -->
+              <em style="color:rgba(26,26,46,0.4);">Code loading... Place your .py files in assets/code/ folder.</em>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Spotify -->
+        <div class="project-card card-spotify reveal" id="cardSpotify">
+          <div class="project-card-date">2025.05 – 2025.06 · Personal Project</div>
+          <h4 class="project-card-title">Spotify Music Analytics — Personal Data Portfolio (0-1)</h4>
+          <div class="project-card-body">
+            <div class="project-card-desc">
+              <ul>
+                <li><strong>Accessed Developer Dashboard &amp; Invoked Spotify API:</strong> Configured <strong>OAuth redirect URI</strong> for user authentication; scraped custom playlists and all track information.</li>
+                <li><strong>Parsed Personal Spotify Extended Streaming History:</strong> Conducted data engineering via <strong>Pandas</strong>; utilized <strong>Matplotlib and Seaborn</strong> for data visualization and analysis.</li>
+                <li><strong>User Skip Behavior Prediction:</strong> Built a <strong>K-Nearest Neighbors (KNN)</strong> model to predict whether a user skips a track; utilized <strong>Confusion Matrix</strong> for performance evaluation, analyzed feature correlations using <strong>Pearson Correlation Coefficient</strong>, and plotted 2D scatter plots; achieved 80% accuracy with strong classification performance.</li>
+                <li><strong>Cross-Platform Playback A/B Testing &amp; Playback Termination Prediction:</strong> Performed independent samples <strong>t-test and chi-square test</strong> on platform groupings (p-value = 0.0568). Implemented <strong>Random Forest</strong> and KNN multi-class classification models; Random Forest achieved 85% accuracy. Utilized Confusion Matrix and classification reports to identify mainstream categories, achieving F1-scores of 0.91 and 0.95.</li>
+              </ul>
+              <div class="project-card-cta">
+                <button class="btn btn-outline-light" onclick="toggleCodePreview('spotify')" style="font-size:0.75rem;">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                  View Source Code
+                </button>
+              </div>
+            </div>
+            <div>
+              <div style="display:flex;flex-direction:column;gap:0.75rem;">
+                <div class="score-badge"><span class="score">Accuracy</span> 80% (KNN)</div>
+                <div class="score-badge"><span class="score">Accuracy</span> 85% (RF)</div>
+                <div class="score-badge"><span class="score">F1</span> 0.91–0.95</div>
+              </div>
+              <div class="project-card-highlights">
+                <span class="project-tech-tag">Python</span>
+                <span class="project-tech-tag">Jupyter Notebook</span>
+                <span class="project-tech-tag">pandas</span>
+                <span class="project-tech-tag">numpy</span>
+                <span class="project-tech-tag">scikit-learn</span>
+                <span class="project-tech-tag">KNeighborsClassifier</span>
+                <span class="project-tech-tag">RandomForestClassifier</span>
+                <span class="project-tech-tag">StandardScaler</span>
+                <span class="project-tech-tag">LabelEncoder</span>
+                <span class="project-tech-tag">scipy.stats</span>
+                <span class="project-tech-tag">ttest_ind</span>
+                <span class="project-tech-tag">chi2_contingency</span>
+                <span class="project-tech-tag">matplotlib</span>
+                <span class="project-tech-tag">seaborn</span>
+                <span class="project-tech-tag">heatmap</span>
+                <span class="project-tech-tag">boxplot</span>
+                <span class="project-tech-tag">barplot</span>
+                <span class="project-tech-tag">scatter</span>
+                <span class="project-tech-tag">confusion_matrix</span>
+                <span class="project-tech-tag">spotipy</span>
+                <span class="project-tech-tag">SpotifyOAuth</span>
+                <span class="project-tech-tag">Spotify Web API</span>
+              </div>
+            </div>
+          </div>
+          <!-- Code preview panel -->
+          <div class="code-preview-panel open" id="codePreviewSpotify">
+            <div class="code-preview-header">
+              <div class="code-preview-tabs">
+                <span class="code-preview-tab active" onclick="switchCodeTab('spotify', 'knn', this)">Skip Prediction (KNN)</span>
+                <span class="code-preview-tab" onclick="switchCodeTab('spotify', 'abtest', this)">A/B Test Platform</span>
+              </div>
+              <button class="code-preview-close" onclick="toggleCodePreview('spotify')">✕</button>
+            </div>
+            <div class="code-preview-content" id="codeContentSpotify">
+              <em style="color:#8B8B8B;">Code loading... Place your .ipynb files in assets/code/ folder.</em>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Innovation Competition -->
+        <div class="project-card card-innovation reveal" id="cardInnovation">
+          <div class="project-card-date">2023.03 – 2023.07 · Competition</div>
+          <h4 class="project-card-title">2023 China College Students' Innovation Competition <span style="font-size:0.8em;font-weight:500;">(International Track + Domestic Higher Education Track)</span><br><small style="font-size:0.7em;opacity:0.7;">中国大学生互联网+创新创业大赛 (国际赛道+国内高教主赛道)<br>智能农业植保无人机立项</small></h4>
+          <div class="project-card-body">
+            <div class="project-card-desc">
+              <ul>
+                <li><strong>Core Team Member:</strong> Led project topic selection and constructed the overall project framework.</li>
+                <li><strong>In-Depth UAV Industry Research:</strong> Reviewed 20+ industry reports to gain deep insights into market demands and technical gaps within the "low-altitude economy development" and agricultural plant protection sectors.</li>
+                <li><strong>Business Plan (BP) Writing:</strong> Authored the executive summary/project overview section of the business plan, comprehensively and precisely articulating key elements including project background and target markets.</li>
+              </ul>
+              <div class="project-card-cta">
+                <button class="btn btn-outline-light" onclick="togglePptPreview()" style="font-size:0.75rem;">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                  View Presentation Deck
+                </button>
+              </div>
+            </div>
+            <div>
+              <div class="project-card-highlights" style="margin-top:0;">
+                <span class="project-tech-tag">Market Research</span>
+                <span class="project-tech-tag">Business Planning</span>
+                <span class="project-tech-tag">UAV Industry</span>
+                <span class="project-tech-tag">Team Leadership</span>
+              </div>
+            </div>
+          </div>
+          <!-- PPT embed panel -->
+          <div class="ppt-embed-panel open" id="pptEmbedPanel">
+            <div class="code-preview-header">
+              <span style="font-family:var(--font-mono);font-size:0.7rem;font-weight:600;color:rgba(26,26,46,0.6);">📊 Presentation Deck (Show highlights only)</span>
+              <div style="display:flex;gap:0.5rem;">
+                <button class="dify-zoom-btn" onclick="togglePptFullscreen()">⛶</button>
+                <button class="code-preview-close" onclick="togglePptPreview()">✕</button>
+              </div>
+            </div>
+            <div class="ppt-embed-body" id="pptEmbedBody">
+              <!-- Slide viewer with floating prev/next controls -->
+              <div class="slide-viewer" id="slideViewer">
+                <button class="slide-nav-btn" id="slidePrev" title="Previous slide">‹</button>
+                <button class="slide-nav-btn" id="slideNext" title="Next slide">›</button>
+                <div class="slide-image-wrapper">
+                  <img src="assets/images/slides/slide_1.png" alt="Slide 1" id="slideImage" class="slide-image">
+                </div>
+                <div class="slide-bottom-bar">
+                  <span class="slide-counter" id="slideCounter">1 / 13</span>
+                  <div class="slide-dots" id="slideDots"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 5: CAMPUS EXPERIENCE
+       ============================================================ -->
+  <section class="section campus-section" id="campus">
+    <div class="container">
+      <div class="campus-header reveal">
+        <span class="section-label">05 — Campus Leadership</span>
+        <h2>Campus Experience</h2>
+        <p>Student leadership, event management &amp; bilingual hosting.</p>
+      </div>
+
+      <div class="campus-timeline">
+        <!-- Event 1: 4 Projects -->
+        <div class="campus-event" data-reveal>
+          <div class="campus-event-marker">
+            <div class="campus-event-dot"></div>
+            <div class="campus-event-line"></div>
+          </div>
+          <div class="campus-event-card">
+            <div class="campus-event-title">4 Campus Projects — 0 to 1</div>
+            <div class="campus-event-role">Core Member · Party and Youth League Management Office, College Youth League Committee</div>
+            <div class="campus-event-desc">
+              Independently launched <strong>4 campus-wide events</strong> from scratch: departmental basketball tournament, red-culture field research, student congress documentation, and league study planning. Served nearly <strong>400+ students</strong> — projects still running today.
+            </div>
+            <div class="campus-event-desc">
+              Managed <strong>Sports &amp; Arts Department</strong> and <strong>Planning &amp; Liaison Department</strong>. Handled end-to-end event operations: planning, budgeting, promotion, execution, and post-event reporting.
+            </div>
+            <div class="campus-event-highlights">
+              <span class="campus-tag">Event Management</span>
+              <span class="campus-tag">Budget Planning</span>
+              <span class="campus-tag">Team Leadership</span>
+              <span class="campus-tag">Cross-departmental</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event 2: Bilingual Hosting -->
+        <div class="campus-event" data-reveal>
+          <div class="campus-event-marker">
+            <div class="campus-event-dot"></div>
+            <div class="campus-event-line"></div>
+          </div>
+          <div class="campus-event-card">
+            <div class="campus-event-title">Bilingual Host &amp; English Voice Acting</div>
+            <div class="campus-event-desc">
+              Served as the <strong>college's bilingual host</strong> for official events and ceremonies. Participated in the <strong>'Youth Talk'</strong> project as an English voice actor — a program that won <strong>2nd Prize in Guangdong Provincial University Ideological &amp; Political Work</strong>.
+            </div>
+            <div class="campus-event-highlights">
+              <span class="campus-tag">Public Speaking</span>
+              <span class="campus-tag">English-Chinese</span>
+              <span class="campus-tag gold">🏆 Guangdong Provincial Second Prize</span>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-tagline">Let's Connect And Build Some Fresh Projects Together!</p>
+      <div class="footer-links">
+        <a href="mailto:cynthiawongwingsaan@gmail.com" class="contact-chip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          cynthiawongwingsaan@gmail.com
+        </a>
+        <a href="tel:+8618102608487" class="contact-chip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +86 18102608487
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" title="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+
+  <!-- Image Lightbox -->
+  <div class="lightbox-overlay" id="lightboxOverlay">
+    <button class="lightbox-close" id="lightboxClose" title="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <line x1="18" y1="6" x2="6" y2="18"/>
+        <line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+    <img class="lightbox-image" id="lightboxImage" src="" alt="Preview" draggable="false">
+  </div>
+
+  <!-- ============================================================
+       SCRIPTS
+       ============================================================ -->
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+  <!-- Splash: Neural Noise WebGL engine (runs before everything) -->
+  <script src="js/neural-noise.js?v=3"></script>
+  <!-- Main JS -->
+  <script src="js/main.js?v=20"></script>
+</body>
+</html>
