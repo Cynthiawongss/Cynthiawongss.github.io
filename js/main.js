@@ -6,48 +6,46 @@
 
 /* ============================================================
    HERO INTRO ANIMATION (GSAP)
+   Hero text is hidden via .hero-text-hidden (opacity:0 in CSS).
+   After Charmonman font loads, we remove that class and play
+   the slide-down animation. No clearProps — elements stay visible.
    ============================================================ */
 (function initHeroAnimation() {
-  if (typeof gsap === 'undefined') return;
+  var wrapper = document.getElementById('heroTextWrapper');
+  if (!wrapper) return;
 
-  const heroName = document.querySelector('.hero-name');
-  const heroTagline = document.querySelector('.hero-tagline');
-  const heroBtn = document.querySelector('.hero-name_wrapper .button-group');
+  var heroName = document.querySelector('.hero-name');
+  var heroTagline = document.querySelector('.hero-tagline');
+  var heroBtn = document.querySelector('.hero-name_wrapper .button-group');
 
-  // NOTE: Do NOT set willChange via gsap.set — it creates GPU layers
-  // that can cause intermittent layout shifts / white bars on hero.
-  // GSAP handles GPU-composited transforms internally.
+  var hasPlayed = false;
 
-  const tlHero = gsap.timeline({
-    defaults: { ease: 'power3.out', duration: 1 },
-    onComplete: () => {
-      // Clean up only the animation overrides — leave willChange untouched.
-      gsap.set([heroName, heroTagline, heroBtn].filter(Boolean), {
-        clearProps: 'transform,opacity',
-      });
-    },
-  });
+  function playOnce() {
+    if (hasPlayed) return;
+    hasPlayed = true;
 
-  if (heroName) {
-    tlHero.fromTo(heroName, { y: -80, opacity: 0 }, { y: 0, opacity: 1, duration: 1.1 });
+    // Reveal — remove the opacity:0 class
+    wrapper.classList.remove('hero-text-hidden');
+
+    // Animate slide-down with GSAP if available
+    if (typeof gsap !== 'undefined') {
+      var tl = gsap.timeline({ defaults: { ease: 'power3.out', duration: 1 } });
+      if (heroName)   tl.fromTo(heroName,   { y: -80, opacity: 0 }, { y: 0, opacity: 1, duration: 1.1, clearProps: 'transform' });
+      if (heroTagline) tl.fromTo(heroTagline, { y: 40, opacity: 0 },  { y: 0, opacity: 1, duration: 0.9, clearProps: 'transform' }, '-=0.6');
+      if (heroBtn)    tl.fromTo(heroBtn,     { y: 20, opacity: 0 },  { y: 0, opacity: 1, duration: 0.7, clearProps: 'transform' }, '-=0.5');
+    }
   }
 
-  if (heroTagline) {
-    tlHero.fromTo(
-      heroTagline,
-      { y: 40, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.9 },
-      '-=0.6'
-    );
-  }
-
-  if (heroBtn) {
-    tlHero.fromTo(
-      heroBtn,
-      { y: 20, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.7 },
-      '-=0.5'
-    );
+  // Wait for Charmonman font
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.load('1em Charmonman').then(function () {
+      requestAnimationFrame(function () { requestAnimationFrame(playOnce); });
+    }).catch(function () {
+      playOnce();
+    });
+    setTimeout(playOnce, 4000); // hard fallback
+  } else {
+    playOnce();
   }
 })();
 

@@ -315,101 +315,6 @@ p { margin: 0; }
 .text-nowrap { white-space: nowrap; }
 
 /* ============================================================
-   SPLASH SCREEN — Neural Noise overlay
-   ============================================================ */
-.splash-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 99999;
-  background: #000000;
-  /* Mirror hero's flex layout so the text Y matches exactly */
-  display: flex;
-  align-items: center;
-  opacity: 1;
-  transition: opacity 0.8s var(--ease-out-expo);
-  pointer-events: all;
-}
-
-.splash-overlay.fade-out {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.splash-canvas {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-/* ── Mirrors .container-large + .hero-video_content-wrapper + .hero-name_wrapper ── */
-.splash-content {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: 1800px;
-  margin: 0 auto;
-  padding: 0 clamp(2rem, 4vw, 5rem);
-  box-sizing: border-box;
-  pointer-events: none;
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-/* inner flex row — mirrors hero-video_content-wrapper (justify-content: center) */
-.splash-label {
-  /* mirrors hero-name_wrapper exactly */
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  text-align: right;
-  gap: 1.75rem;
-  width: fit-content;
-  margin-left: auto;
-  padding-top: 0.75rem;
-}
-
-.splash-label-text {
-  font-family: 'Charmonman', 'Charm', cursive, serif;
-  font-size: clamp(3rem, 10vw, 9rem) !important;
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: 0.02em;
-  white-space: nowrap;
-  text-align: center;
-  color: #E6335A;
-  text-shadow: 0 0 80px rgba(230, 51, 90, 0.5), 0 0 160px rgba(230, 51, 90, 0.3), 0 0 240px rgba(200, 40, 80, 0.2);
-  opacity: 0;
-  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.splash-label-text.visible {
-  opacity: 1;
-}
-
-/* Invisible spacers matching tagline + button — maintain same column height */
-.splash-spacer {
-  visibility: hidden;
-  pointer-events: none;
-}
-/* First spacer: tagline height (~0 height since it wraps, but the gap handles it) */
-.splash-spacer:nth-child(2) {
-  display: block;
-  font-size: var(--text-medium);
-  line-height: 1.55;
-  max-width: 720px;
-  width: 720px;
-}
-/* Second spacer: button row height */
-.splash-spacer:nth-child(3) {
-  display: block;
-  font-size: var(--text-regular);
-  line-height: 1.2;
-  padding: 0.75rem 0;
-}
-
-/* ============================================================
    NAVIGATION — Liquid Glass Pill (centered)
    ============================================================ */
 
@@ -664,6 +569,13 @@ nav.navbar_wrapper.nav-on-dark .nav-item.active .liquid-spot {
   align-items: center;
   gap: 2rem;
   width: 100%;
+}
+
+/* Hero text hidden class — revealed by JS after Charmonman font loads */
+.hero-text-hidden .hero-name,
+.hero-text-hidden .hero-tagline,
+.hero-text-hidden .button-group {
+  opacity: 0;
 }
 
 /* Hero Name — Charmonman, right-aligned, large white */
