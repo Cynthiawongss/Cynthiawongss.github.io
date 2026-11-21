@@ -1,8 +1,0 @@
-# Chrome debug profile (large, not needed)
-.tmp-chrome-profile/
-
-# Claude Code config (not needed for the site)
-.claude/
-
-# Old backup JS file
-js/main_v2.js
